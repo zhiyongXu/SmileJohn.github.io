@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>我的网页</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<h1>我的</h1>
+<h2>Json2</h2>
+<p>My First Json Label get out of my yard...</p>
+<a href="https://www.baidu.com">Bai Du</a>
+<br />
+<a href="https://www.taobao.com">Tao Bao</a>
+<a href="666">ALIBABA</a>
+<br />
+<image src="logo.png" width="200" height="250">
+<p>my best friend is Bob , a dog of my life</p>
+<p>my best friend is Bob , a dog of my life</p>
+<p>my best friend is Bob , a dog of my life</p>
+<p>my best friend is Bob , a dog of my life</p>
+
+<div id="app">
+	{{ message }} {{ value }}
+</div>
+
+<div id="app-2">
+  <span v-bind:title="message">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+</div>
+
+<div id="app-3">
+	<button v-if="seen">看到我了吗</button>
+</div>
+<br/>
+<div id="app-6">
+	<div> 非常好， {{ message }} </div>
+	<input v-model="message">
+	<h2 v-if="ok">非常好</h2>
+	<h2 v-else>不错啊，小伙子</h2>
+</div>
+
+<ul id="app-7">
+	<li v-for="(item, index) in items">
+		{{ index }} {{ item.message }}
+	</li>
+</ul>
+
+<table>
+	<caption>锄禾日当午，汗滴禾下土</caption>
+	<tr>
+		<th style="background-color: lightblue">水果</th>
+		<th>水分</th>
+		<th>营养</th>
+	</tr>
+	<tr>
+		<th style="background-color: lightblue">苹果</th>
+		<td>20</td>
+		<td>花生酱</td>
+	</tr>
+	<tr>
+		<th style="background-color: lightblue">荔枝</th>
+		<td>10</td>
+		<td>维生素</td>
+	</tr>
+	<tr>
+		<th style="background-color: lightblue">香蕉</th>
+		<td>15</td>
+		<td>蛋白质</td>
+	</tr>
+</table>>
+
+
+<script type="text/javascript">
+
+	var app = new Vue({
+  		el: '#app',
+  		data: {
+    		message: 'Hello Vue!',
+    		value: 'good'
+  		}
+	})
+
+	var app2 = new Vue({
+ 		el: '#app-2',
+  		data: {
+   		 	message: '页面加载于 ' + new Date().toLocaleString()
+  		}
+	})
+
+	var app3 = new Vue({
+		el: '#app-3',
+		data: {
+			seen: false
+		}
+	})
+
+	var app6 = new Vue({
+		el: '#app-6',
+		data: {
+			ok: false,
+			message: 'Hello Bill'
+		}
+	})
+
+	var app7 = new Vue({
+		el: '#app-7',
+		data: {
+			items: [
+			{message: '非常好'},
+			{message: '怎么了'}
+			]
+		}
+	})
+
+</script>
+
+</body>
+</html>

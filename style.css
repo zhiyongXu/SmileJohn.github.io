@@ -1,0 +1,22 @@
+p {
+	color: red;
+	font-size: 24px;
+	/*background-color: blue;*/
+
+}
+
+h1 {
+	color: orange;
+}
+
+[href="666"]::after {
+	content:'123';
+}
+
+p::after {
+	content:'444';
+}
+
+html {
+	background-color: lightgrey;
+}
